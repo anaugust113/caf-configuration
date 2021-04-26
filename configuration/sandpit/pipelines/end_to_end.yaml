@@ -42,7 +42,7 @@ stages:
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_launchpad/add-ons/azure_devops_agent \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution/add-ons/azure_devops_agent \
           -tfstate azdo-agent-level1.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level1/azure_devops_agents \
           -parallelism=30 \
@@ -77,7 +77,7 @@ stages:
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_launchpad/add-ons/azure_devops_agent \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution/add-ons/azure_devops_agent \
           -tfstate azdo-agent-level2.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level2/azure_devops_agents \
           -parallelism=30 \
@@ -113,7 +113,7 @@ stages:
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_launchpad/add-ons/azure_devops_agent \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution/add-ons/azure_devops_agent \
           -tfstate azdo-agent-level3.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level3/azure_devops_agents \
           -parallelism=30 \
@@ -149,7 +149,7 @@ stages:
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_launchpad/add-ons/azure_devops_agent \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution/add-ons/azure_devops_agent \
           -tfstate azdo-agent-level4.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level4/azure_devops_agents \
           -parallelism=30 \
@@ -181,6 +181,7 @@ stages:
 
     steps:
     - checkout: self
+    
     - bash: |
         git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
 

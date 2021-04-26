@@ -21,13 +21,13 @@ This scenario require the following privileges:
 ```bash
 rover -lz /tf/caf/landingzones/caf_launchpad \
   -launchpad \
-  -var-folder /tf/caf/landingzones/caf_launchpad/scenario/200 \
+  -var-folder /tf/caf/configuration/sandpit/level0/launchpad \
   -level level0 \
   -a apply
 
 rover -lz /tf/caf/landingzones/caf_launchpad \
   -launchpad \
-  -var-folder /tf/caf/landingzones/caf_launchpad/scenario/200 \
+  -var-folder /tf/caf/configuration/sandpit/level0/launchpad \
   -level level0 \
   -a destroy
 ```

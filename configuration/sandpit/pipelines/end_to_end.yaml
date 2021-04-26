@@ -29,12 +29,15 @@ stages:
 
     steps:
     - checkout: self
+    - checkout: MyGitHubRepo
+      path: s/landingzones
+      
     - bash: |
         git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/public 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/public/landingzones/caf_launchpad/add-ons/azure_devops_agent \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_launchpad/add-ons/azure_devops_agent \
           -tfstate azdo-agent-level1.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level1/azure_devops_agents \
           -parallelism=30 \

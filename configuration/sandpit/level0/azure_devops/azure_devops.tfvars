@@ -1,7 +1,7 @@
 
 azure_devops = {
 
-  url     = "https://dev.azure.com/change_with_your_org/"
+  url     = "https://dev.azure.com/anaugust/"
   project = "contoso_demo"
 
   # PAT Token should be updated manually to the keyvault after running launchpad
@@ -56,9 +56,9 @@ azure_devops = {
 
   service_endpoints = {
     contoso_demo = {
-      endpoint_name       = "Replace with your subscription name"
-      subscription_name   = "Replace with your subscription name"
-      subscription_id     = "Replace with your subscription ID"
+      endpoint_name       = "Visual Studio Enterprise"
+      subscription_name   = "Visual Studio Enterprise"
+      subscription_id     = "30efd4e8-02ae-4078-b7cb-4559f2915964"
       aad_app_key         = "contoso_demo"
       secret_keyvault_key = "devops"
     }
@@ -76,7 +76,8 @@ azure_devops = {
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "2104.0"
+        LANDINGZONE_BRANCH  = "2104.1"
+        ROVER_RUNNER        = "true"
       }
     }
 
@@ -223,7 +224,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "azdo-agent-level1.tfstate"
         configPath      = "/configuration/sandpit/level1/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level1"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -239,7 +240,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "azdo-agent-level1.tfstate"
         configPath      = "/configuration/sandpit/level1/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level1"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -255,7 +256,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "azdo-agent-level1.tfstate"
         configPath      = "/configuration/sandpit/level1/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level1"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -273,7 +274,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "azdo-agent-level2.tfstate"
         configPath      = "/configuration/sandpit/level2/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level2"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -289,7 +290,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "azdo-agent-level2.tfstate"
         configPath      = "/configuration/sandpit/level2/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level2"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -305,7 +306,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "azdo-agent-level2.tfstate"
         configPath      = "/configuration/sandpit/level2/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level2"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -323,7 +324,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "azdo-agent-level3.tfstate"
         configPath      = "/configuration/sandpit/level3/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level3"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -339,7 +340,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "azdo-agent-level3.tfstate"
         configPath      = "/configuration/sandpit/level3/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level3"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -355,7 +356,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "azdo-agent-level3.tfstate"
         configPath      = "/configuration/sandpit/level3/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level3"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -372,7 +373,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "azdo-agent-level4.tfstate"
         configPath      = "/configuration/sandpit/level4/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level4"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -388,7 +389,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "azdo-agent-level4.tfstate"
         configPath      = "/configuration/sandpit/level4/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level4"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -404,7 +405,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "azdo-agent-level4.tfstate"
         configPath      = "/configuration/sandpit/level4/azure_devops_agents"
-        landingZonePath = "/public/landingzones/caf_launchpad/add-ons/azure_devops_agent"
+        landingZonePath = "/landingzones/caf_solution/add-ons/azure_devops_agent"
         level           = "level4"
       }
       variable_group_keys = ["global", "level0", "level0_kv"]
@@ -425,7 +426,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "caf_foundations.tfstate"
         configPath      = "/configuration/sandpit/level1/caf_foundations"
-        landingZonePath = "/public/landingzones/caf_foundations"
+        landingZonePath = "/landingzones/caf_foundations"
         level           = "level1"
       }
       variable_group_keys = ["global", "level1", "level1_kv"]
@@ -442,7 +443,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "caf_foundations.tfstate"
         configPath      = "/configuration/sandpit/level1/caf_foundations"
-        landingZonePath = "/public/landingzones/caf_foundations"
+        landingZonePath = "/landingzones/caf_foundations"
         level           = "level1"
       }
       variable_group_keys = ["global", "level1", "level1_kv"]
@@ -458,7 +459,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "caf_foundations.tfstate"
         configPath      = "/configuration/sandpit/level1/caf_foundations"
-        landingZonePath = "/public/landingzones/caf_foundations"
+        landingZonePath = "/landingzones/caf_foundations"
         level           = "level1"
       }
       variable_group_keys = ["global", "level1", "level1_kv"]
@@ -480,7 +481,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "caf_shared_services.tfstate"
         configPath      = "/configuration/sandpit/level2/shared_services"
-        landingZonePath = "/public/landingzones/caf_shared_services"
+        landingZonePath = "/landingzones/caf_shared_services"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -496,7 +497,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "caf_shared_services.tfstate"
         configPath      = "/configuration/sandpit/level2/shared_services"
-        landingZonePath = "/public/landingzones/caf_shared_services"
+        landingZonePath = "/landingzones/caf_shared_services"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -512,7 +513,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "caf_shared_services.tfstate"
         configPath      = "/configuration/sandpit/level2/shared_services"
-        landingZonePath = "/public/landingzones/caf_shared_services"
+        landingZonePath = "/landingzones/caf_shared_services"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -530,7 +531,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "networking_hub.tfstate"
         configPath      = "/configuration/sandpit/level2/networking/hub"
-        landingZonePath = "/public/landingzones/caf_networking"
+        landingZonePath = "/landingzones/caf_networking"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -546,7 +547,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "networking_hub.tfstate"
         configPath      = "/configuration/sandpit/level2/networking/hub"
-        landingZonePath = "/public/landingzones/caf_networking"
+        landingZonePath = "/landingzones/caf_networking"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -562,7 +563,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "networking_hub.tfstate"
         configPath      = "/configuration/sandpit/level2/networking/hub"
-        landingZonePath = "/public/landingzones/caf_networking"
+        landingZonePath = "/landingzones/caf_networking"
         level           = "level2"
       }
       variable_group_keys = ["global", "level2", "level2_kv"]
@@ -584,7 +585,7 @@ azure_devops = {
         terraformAction = "plan",
         tfstateName     = "landing_zone_aks.tfstate"
         configPath      = "/configuration/sandpit/level3/aks"
-        landingZonePath = "/public/landingzones/caf_solutions"
+        landingZonePath = "/landingzones/caf_solutions"
         level           = "level3"
       }
       variable_group_keys = ["global", "level3", "level3_kv"]
@@ -600,7 +601,7 @@ azure_devops = {
         terraformAction = "apply",
         tfstateName     = "landing_zone_aks.tfstate"
         configPath      = "/configuration/sandpit/level3/aks"
-        landingZonePath = "/public/landingzones/caf_solutions"
+        landingZonePath = "/landingzones/caf_solutions"
         level           = "level3"
       }
       variable_group_keys = ["global", "level3", "level3_kv"]
@@ -616,7 +617,7 @@ azure_devops = {
         terraformAction = "destroy",
         tfstateName     = "landing_zone_aks.tfstate"
         configPath      = "/configuration/sandpit/level3/aks"
-        landingZonePath = "/public/landingzones/caf_solutions"
+        landingZonePath = "/landingzones/caf_solutions"
         level           = "level3"
       }
       variable_group_keys = ["global", "level3", "level3_kv"]

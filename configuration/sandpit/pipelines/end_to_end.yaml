@@ -38,8 +38,8 @@ stages:
       path: s/landingzones
       
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
-
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
+        
         az login --identity -u $(msi-resource-id)
 
         /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution/add-ons/azure_devops_agent \
@@ -73,7 +73,7 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
@@ -109,7 +109,7 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
@@ -145,7 +145,7 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
@@ -183,11 +183,11 @@ stages:
     - checkout: self
     
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_foundations \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution \
           -tfstate caf_foundations.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/level1/caf_foundations \
           -parallelism=30 \
@@ -219,11 +219,11 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_shared_services \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution \
           -tfstate caf_shared_services.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/level2/shared_services \
           -parallelism=30 \
@@ -255,11 +255,11 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
-        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_networking \
+        /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution \
           -tfstate networking_hub.tfstate \
           -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level2/networking/hub \
           -parallelism=30 \
@@ -291,7 +291,7 @@ stages:
     steps:
     - checkout: self
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 

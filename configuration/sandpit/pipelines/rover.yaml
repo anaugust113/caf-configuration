@@ -35,7 +35,7 @@ jobs:
     - checkout: self
 
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 
@@ -52,7 +52,7 @@ jobs:
       displayName: 'Terraform $(terraformAction)'
 
     - bash: |
-        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH} 2>/dev/null
+        git clone --branch $(LANDINGZONE_BRANCH) https://github.com/Azure/caf-terraform-landingzones.git ${BUILD_REPOSITORY_LOCALPATH}/landingzones 2>/dev/null
 
         az login --identity -u $(msi-resource-id)
 

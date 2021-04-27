@@ -70,7 +70,7 @@ azure_devops = {
       allow_access = true
       variables = {
         HOME_FOLDER_USER    = "vsts_azpcontainer"
-        ROVER_IMAGE         = "aztfmod/rover:0.14.10-2104.1611"
+        ROVER_IMAGE         = "aztfmod/rover:0.14.10-2104.0806"
         TF_CLI_ARGS         = "'-no-color'"
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"

@@ -225,7 +225,7 @@ stages:
 
         /tf/rover/rover.sh -lz ${BUILD_REPOSITORY_LOCALPATH}/landingzones/caf_solution \
           -tfstate caf_shared_services.tfstate \
-          -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/level2/shared_services \
+          -var-folder ${BUILD_REPOSITORY_LOCALPATH}/configuration/sandpit/level2/shared_services \
           -parallelism=30 \
           -level level2 \
           -a $(terraformAction) \

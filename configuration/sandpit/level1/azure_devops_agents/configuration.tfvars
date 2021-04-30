@@ -29,7 +29,7 @@ azure_devops = {
 
   # Rover version to apply to the devops self-hosted agents during the setup.
   rover_version = "aztfmod/rover:2012.1109"
-  url           = "https://dev.azure.com/azure-terraform/"
+  url           = "https://dev.azure.com/anaugust/"
 
   pats = {
     agent = {
